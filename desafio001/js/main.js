@@ -7,13 +7,13 @@ async function getAllProducts() {
     const data = await response.json();
 
     const countDiv = document.createElement("div");
-    countDiv.classList.add("product-modal"); 
+    countDiv.classList.add("product-modal");
     countDiv.innerText = `Total Products: ${data.length}`;
     productContainer.appendChild(countDiv);
 
     data.map((prod) => {
       const card = document.createElement("li");
-      card.classList.add("product-card"); 
+      card.classList.add("product-card");
 
       const title = document.createElement("h2");
       title.innerText = prod.productName;
@@ -27,6 +27,7 @@ async function getAllProducts() {
 
       const listPrice = document.createElement("p");
       listPrice.innerText = `Preço de Lista: R$ ${prod.listPrice / 100}`;
+      listPrice.classList.add('price')
 
       const bestPrice = document.createElement("p");
       bestPrice.innerText = `Melhor Preço: R$ ${prod.bestPrice / 100}`;
@@ -34,9 +35,9 @@ async function getAllProducts() {
       const button = document.createElement("button");
       button.innerText = "Ver Produto";
       button.addEventListener("click", () => {
-          window.open(prod.link, "_blank");
+        window.open(prod.link, "_blank");
       });
-      
+
       card.appendChild(title);
       card.appendChild(brand);
       card.appendChild(image);
