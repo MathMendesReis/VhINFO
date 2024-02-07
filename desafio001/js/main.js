@@ -41,9 +41,6 @@ async function getAllProducts() {
 
       const button = document.createElement("button");
       button.innerText = "Ver Produto";
-      button.addEventListener("click", () => {
-        window.open(prod.link, "_blank");
-      });
 
       card.appendChild(title);
       card.appendChild(brand);
