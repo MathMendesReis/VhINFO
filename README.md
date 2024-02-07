@@ -9,6 +9,7 @@ Desafio Técnico para Processo Seletivo VhINFO XLOW 2023
 - necessario rodar um servidor em python, para evitar o erro de CORS
 
 ```bash
+git clone https://github.com/MathMendesReis/VhINFO.git
 cd VhINFO 
 python3 -m http.server
 python -m SimpleHTTPServer
