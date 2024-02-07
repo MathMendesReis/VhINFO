@@ -1,17 +1,24 @@
 const url = "https://desafio.xlow.com.br/search";
 const productContainer = document.querySelector("#products-container");
+const productCountInput = document.querySelector("#product-count-input");
 
 async function getAllProducts() {
   try {
     const response = await fetch(url);
     const data = await response.json();
 
-    const countDiv = document.createElement("div");
-    countDiv.classList.add("product-modal");
-    countDiv.innerText = `Total Products: ${data.length}`;
-    productContainer.appendChild(countDiv);
+    const countH1 = document.createElement("h1");
+    countH1.classList.add("product-modal");
+    countH1.innerText = `Total Products: ${data.length}`;
+    productContainer.appendChild(countH1);
 
-    data.map((prod) => {
+    productContainer.innerHTML = '';
+
+    const productCount = parseInt(productCountInput.value) || data.length;
+
+    for (let i = 0; i < productCount && i < data.length; i++) {
+      const prod = data[i];
+
       const card = document.createElement("li");
       card.classList.add("product-card");
 
@@ -45,10 +52,12 @@ async function getAllProducts() {
       card.appendChild(bestPrice);
       card.appendChild(button)
       productContainer.appendChild(card);
-    });
+    }
   } catch (error) {
     console.error("Erro ao obter produtos:", error);
   }
 }
+
+productCountInput.addEventListener('change', getAllProducts);
 
 getAllProducts();
