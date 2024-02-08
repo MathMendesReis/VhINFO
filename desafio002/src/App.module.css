@@ -1,15 +1,12 @@
 .card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    width: 250px;
+  
 }
 
 .card img{
-    width: 176px;
-    height: 176px;
+    width: 100%;
+    height: 500px;
+    transition: opacity 0.5s ease-in-out;
+
 }
 .card h1{
     font-size: 18px;
@@ -17,24 +14,68 @@
 }
 
 .page {
-    width: 100vw;
+    max-width: 1440px;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.containerCard {
-    /* background-color: red;
-    width: 100%; */
+    margin: 0 auto;
 }
 
+
 .buttonVoltarItem {
-   position: absolute;
-   top: 50%; 
-   left: 25%; 
-}
+    position: absolute;
+    top: 50%; 
+    left: 15%; 
+    z-index: 999;
+    background-color: transparent;
+    border: none;
+    color: rgb(17, 16, 16);
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+ }
+ 
+ 
 .buttonAvancarItem {
    position: absolute;
    top: 50%; 
-   left: 70%; 
+   left: 84%; 
+   z-index: 999;
+   background-color: transparent;
+   border: none;
+   color: rgb(17, 16, 16);
+   width: 50px;
+   height: 50px;
+   font-size: 24px;
+   cursor: pointer;
+}
+
+.cardButtons{
+    position: absolute;
+    top: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.buttonNav {
+    cursor: pointer;
+}
+
+.buttonActive {
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    transition: border-color 0.5s ease
+}
+.buttonDesative {
+    border: 1px solid black;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    transition: border-color 0.5s ease
 }
